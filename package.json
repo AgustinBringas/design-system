@@ -1,18 +1,10 @@
 {
   "name": "@bringas/ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Enterprise-grade React design system — accessible, composable, token-driven.",
-  "keywords": [
-    "design-system",
-    "react",
-    "typescript",
-    "tailwindcss",
-    "radix-ui"
-  ],
+  "keywords": ["design-system", "react", "typescript", "tailwindcss", "radix-ui"],
   "license": "MIT",
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "type": "module",
   "exports": {
     ".": {
@@ -30,10 +22,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "scripts": {
     "build": "tsc --noEmit && vite build",
     "dev": "storybook dev --port 6006",
@@ -119,11 +108,7 @@
     "vitest": "^2.0.0"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "biome check --write --no-errors-on-unmatched"
-    ],
-    "*.{json,md,yaml,yml,css}": [
-      "biome format --write --no-errors-on-unmatched"
-    ]
+    "*.{ts,tsx}": ["biome check --write --no-errors-on-unmatched"],
+    "*.{json,md,yaml,yml,css}": ["biome format --write --no-errors-on-unmatched"]
   }
 }
