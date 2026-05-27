@@ -1,0 +1,27 @@
+/*
+ * Storybook-only stylesheet.
+ * Not distributed with the library — consumers run their own Tailwind build.
+ *
+ * Load order in preview.ts:
+ *   1. This file  →  Tailwind base reset + utility classes
+ *   2. globals.css →  CSS custom property definitions (theme variables)
+ *
+ * The story canvas body picks up the active theme's variables because
+ * @storybook/addon-themes sets data-theme on the <html> element, and our
+ * CSS selectors in globals.css target [data-theme="…"] on any ancestor.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Ensure the canvas background and text colour update when the theme
+ * switcher fires. Without this the body stays white in dark mode even
+ * though all components render correctly.
+ */
+body {
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
+  transition: background-color 150ms ease, color 150ms ease;
+}
