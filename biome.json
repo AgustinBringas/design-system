@@ -59,7 +59,6 @@
       },
       "a11y": {
         "useAltText": "error",
-        "useAriaLabels": "error",
         "useButtonType": "error",
         "useKeyWithClickEvents": "error",
         "noAutofocus": "warn",

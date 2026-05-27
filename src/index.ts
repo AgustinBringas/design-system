@@ -7,6 +7,7 @@ import './index.css';
 // export { ThemeProvider, useTheme } from './providers/theme-provider';
 
 // ─── Components ───────────────────────────────────────────────────────────
+export * from './components/badge';
 export * from './components/button';
 export * from './components/card';
 export * from './components/context-menu';
