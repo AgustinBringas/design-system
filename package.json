@@ -50,7 +50,8 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm build && changeset publish",
-    "link": "npm run build && npm link"
+    "link": "npm run build && npm link",
+    "prepack": "npm run build"
   },
   "publishConfig": {
     "access": "public",
