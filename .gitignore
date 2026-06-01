@@ -30,6 +30,11 @@ Thumbs.db
 
 # Claude Code local config
 .claude
+CLAUDE.md
+.playwright-mcp
+
+# Artifacts
+portfolio/
 
 # TypeScript
 *.tsbuildinfo
