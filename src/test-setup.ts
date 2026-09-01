@@ -16,6 +16,9 @@ Object.defineProperty(HTMLElement.prototype, 'setPointerCapture', {
 Object.defineProperty(HTMLElement.prototype, 'releasePointerCapture', {
   value: vi.fn(),
 });
+Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', {
+  value: vi.fn(),
+});
 
 // ThemeProvider and useMediaQuery rely on matchMedia.
 Object.defineProperty(window, 'matchMedia', {
