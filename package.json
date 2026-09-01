@@ -1,6 +1,6 @@
 {
   "name": "@bringas/ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Enterprise-grade React design system — accessible, composable, token-driven.",
   "keywords": ["design-system", "react", "typescript", "tailwindcss", "radix-ui"],
   "license": "MIT",
