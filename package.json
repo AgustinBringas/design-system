@@ -38,7 +38,7 @@
     "prepare": "husky",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "pnpm build && changeset publish",
+    "release": "npm run build && changeset publish",
     "link": "npm run build && npm link",
     "prepack": "npm run build"
   },
