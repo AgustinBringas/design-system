@@ -96,6 +96,14 @@
           "suspicious": { "noExplicitAny": "off" }
         }
       }
+    },
+    {
+      "include": ["src/tailwind/preset.ts"],
+      "linter": {
+        "rules": {
+          "style": { "useNamingConvention": "off" }
+        }
+      }
     }
   ]
 }
