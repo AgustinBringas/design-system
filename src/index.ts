@@ -17,6 +17,7 @@ export * from './components/drawer';
 export * from './components/dropdown-menu';
 export * from './components/input';
 export * from './components/modal';
+export * from './components/popover';
 export * from './components/radio-group';
 export * from './components/select';
 export * from './components/separator';
