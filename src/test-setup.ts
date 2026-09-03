@@ -20,6 +20,17 @@ Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', {
   value: vi.fn(),
 });
 
+// cmdk (used by Combobox) observes element size in jsdom where ResizeObserver doesn't exist.
+class ResizeObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+Object.defineProperty(window, 'ResizeObserver', {
+  writable: true,
+  value: ResizeObserverMock,
+});
+
 // ThemeProvider and useMediaQuery rely on matchMedia.
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
