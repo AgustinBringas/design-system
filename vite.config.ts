@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite';
+import { existsSync, readdirSync, statSync } from 'node:fs';
+import { resolve } from 'node:path';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { resolve } from 'path';
-import { existsSync, readdirSync, statSync } from 'fs';
 
 /**
  * Discovers component sub-packages at build time so each component gets its
@@ -17,21 +17,16 @@ function getComponentEntries(): Record<string, string> {
   const componentsDir = resolve(__dirname, 'src/components');
   if (!existsSync(componentsDir)) return {};
 
-  return readdirSync(componentsDir)
-    .filter((name) => {
-      const entry = resolve(componentsDir, name, 'index.ts');
-      return (
-        statSync(resolve(componentsDir, name)).isDirectory() &&
-        existsSync(entry)
-      );
-    })
-    .reduce<Record<string, string>>(
-      (acc, dir) => ({
-        ...acc,
-        [`components/${dir}/index`]: resolve(componentsDir, dir, 'index.ts'),
-      }),
-      {},
-    );
+  const dirs = readdirSync(componentsDir).filter((name) => {
+    const entry = resolve(componentsDir, name, 'index.ts');
+    return statSync(resolve(componentsDir, name)).isDirectory() && existsSync(entry);
+  });
+
+  const entries: Record<string, string> = {};
+  for (const dir of dirs) {
+    entries[`components/${dir}/index`] = resolve(componentsDir, dir, 'index.ts');
+  }
+  return entries;
 }
 
 export default defineConfig({
@@ -47,11 +42,7 @@ export default defineConfig({
     // single declaration file, breaking per-component imports.
     dts({
       include: ['src'],
-      exclude: [
-        'src/**/*.stories.tsx',
-        'src/**/*.test.tsx',
-        'src/test-setup.ts',
-      ],
+      exclude: ['src/**/*.stories.tsx', 'src/**/*.test.tsx', 'src/test-setup.ts'],
       // Point at the build-specific tsconfig so dts respects rootDir and
       // excludes test/story files, without disturbing the IDE tsconfig.
       tsconfigPath: './tsconfig.build.json',
@@ -82,6 +73,8 @@ export default defineConfig({
         'react-dom',
         /^@radix-ui\/.*/,
         'tailwindcss',
+        'react-markdown',
+        'remark-gfm',
       ],
 
       output: {
