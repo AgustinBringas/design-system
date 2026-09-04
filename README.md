@@ -80,14 +80,26 @@ export function LoginCard() {
 | `Button` | Primary action element with `default`, `destructive`, `outline`, `secondary`, `ghost`, `link` variants and `sm`, `md`, `lg`, `icon` sizes |
 | `Input` | Text field with optional leading/trailing icons, label, and error state |
 | `Textarea` | Multi-line text field, same API as Input |
+| `Checkbox` | Checkbox with an optional `label` (wired to the input via `htmlFor`/`id`) and an `indeterminate` state |
+| `RadioGroup` | Radio button group — `RadioGroup`, `RadioGroupItem` with an optional `label` |
+| `Select` | Accessible select dropdown — `Select`, `SelectTrigger`, `SelectContent`, `SelectItem`, `SelectGroup`, `SelectLabel`, `SelectSeparator` |
+| `Combobox` | Searchable select with single or multiple selection, keyword filtering, and an optional per-option description tooltip |
 | `Text` | Typography primitive with `heading`, `body`, `label`, `code`, `caption` variants |
+| `Badge` | Status pill with `default`, `secondary`, `outline` variants and `sm`, `md`, `lg` sizes; renders as a `button` when given `onClick` |
 | `Card` | Surface container — `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter` |
+| `Table` | Data table primitives — `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption` |
 | `Modal` | Accessible dialog — `Modal`, `ModalTrigger`, `ModalContent`, `ModalHeader`, `ModalFooter`, `ModalTitle`, `ModalDescription` |
 | `Drawer` | Slide-in panel from any side — same sub-component API as Modal plus `DrawerBody` |
 | `DropdownMenu` | Triggered floating menu with items, checkboxes, radio groups, and sub-menus |
 | `ContextMenu` | Right-click menu — same API as DropdownMenu |
+| `Popover` | Floating panel anchored to a trigger — `Popover`, `PopoverTrigger`, `PopoverContent`, `PopoverAnchor`, `PopoverClose` |
+| `Tabs` | Tabbed navigation — `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent` |
+| `Accordion` | Collapsible content sections — `Accordion`, `AccordionItem`, `AccordionTrigger`, `AccordionContent` |
 | `Toaster` | Toast notification system with `useToast` hook |
 | `Tooltip` | Hover/focus tooltip — wrap with `TooltipProvider` at the app root |
+| `Progress` | Determinate progress bar |
+| `Skeleton` | Pulsing placeholder block for loading states |
+| `RichText` | Renders a markdown/GFM string (bold, lists, tables, blockquotes, headings) as styled HTML |
 | `Separator` | Horizontal or vertical divider |
 
 ## Theming
