@@ -13,6 +13,8 @@ export const inputVariants = cva(
     // States
     'disabled:cursor-not-allowed disabled:opacity-50',
     'file:border-0 file:bg-transparent file:font-medium file:text-foreground',
+    // Hide native number input spinner (WebKit/Blink/Edge + Firefox)
+    '[&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]',
   ],
   {
     variants: {
@@ -22,12 +24,12 @@ export const inputVariants = cva(
         lg: 'h-10 px-4 text-base',
       },
       hasError: {
-        true:  'border-destructive hover:border-destructive focus-visible:border-destructive focus-visible:ring-destructive',
+        true: 'border-destructive hover:border-destructive focus-visible:border-destructive focus-visible:ring-destructive',
         false: '',
       },
     },
     defaultVariants: {
-      size:     'md',
+      size: 'md',
       hasError: false,
     },
   },
@@ -49,7 +51,7 @@ export const inputIconVariants = cva(
   {
     variants: {
       side: {
-        left:  'left-3',
+        left: 'left-3',
         right: 'right-3',
       },
       size: {
