@@ -4,6 +4,10 @@
   "description": "Enterprise-grade React design system — accessible, composable, token-driven.",
   "keywords": ["design-system", "react", "typescript", "tailwindcss", "radix-ui"],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgustinBringas/design-system"
+  },
   "sideEffects": ["*.css"],
   "type": "module",
   "exports": {
